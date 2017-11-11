@@ -27,7 +27,7 @@ def L_model_forward(X, parameters):
         caches.append(cache)
     
     # Implement LINEAR -> SIGMOID. Add "cache" to the "caches" list.
-    AL, cache = sigmoid(np.dot(parameters['W' + str(L)], A) + parameters['b' + str(L)])
+    AL, cache = linear_activation_forward(A, parameters['W' + str(L)], parameters['b' + str(L)], 'sigmoid')
     caches.append(cache)
     
     assert(AL.shape == (1,X.shape[1]))
